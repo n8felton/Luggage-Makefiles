@@ -1,0 +1,9 @@
+#!/bin/sh
+
+LOGINWINDOW_PID=$(ps auwwx | grep [l]oginwindow | awk '{ print $2}')
+
+launchctl bsexec $LOGINWINDOW_PID \
+"$1/Contents/Resources/Install Adobe Flash Player.app/Contents/MacOS/Adobe Flash Player Install Manager" \
+-install
+	
+"/Library/Application Support/Adobe/Flash Player Install Manager/fpsaud" -setUpdateMode 0
